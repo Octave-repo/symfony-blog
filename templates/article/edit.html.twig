@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition{% endblock %}
+{% block body %}
+    {% if not app.user or app.user.username != article.author%}
+        <meta http-equiv = "refresh" content = "0 ; url = ../../article" />
+    {% else %}
+    <h1>Editer "{{ article.titre }}"</h1>
+
+    {{ include('article/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+
+    <div class="main-wrapper">
+        {{ include('article/_delete_form.html.twig') }}
+        <div class = "to-justify">
+            <a href="{{ path('article_index') }}"><i class="fas fa-backward"></i>Retour</a>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

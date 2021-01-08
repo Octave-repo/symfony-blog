@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel Article{% endblock %}
+{% block body %}
+    {% if not app.user %}
+        <meta http-equiv = "refresh" content = "0 ; url = ../../article" />
+    {% else %}
+    <h1>Créer un nouvel article</h1>
+    {{ include('article/_form.html.twig') }}
+    <div class="main-wrapper">
+        <div class = "to-justify">
+            <a href="{{ path('article_index') }}"><i class="fas fa-backward"></i>Retour</a>
+        </div>
+    </div>
+    {% endif %}
+    
+{% endblock %}

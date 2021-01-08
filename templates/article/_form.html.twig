@@ -1,0 +1,14 @@
+{% block stylesheets %}
+        <link href="{{ asset('css/oskour.css') }}" rel="stylesheet">
+{% endblock %}
+{{ form_start(form) }}
+    <div class="main-wrapper">
+        {{ form_label(form.titre, 'Titre') }}
+        {{ form_widget(form.titre) }}
+        {{ form_widget(form.text) }}
+        <div style="display:none">
+            {{ form_widget(form.author, {'value' : app.user.username })}}
+        </div>
+        <button class="btn">{{ button_label|default('Enregister') }}</button>
+    </div>
+{{ form_end(form) }}
