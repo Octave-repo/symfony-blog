@@ -1,5 +1,7 @@
 # Projet de Blog
 
+Octave (Rungassamy-)Valadier
+
 ## Fonctionalités
 
 Sur la page principale, on peux voir les différents articles :
