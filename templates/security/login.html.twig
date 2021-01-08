@@ -3,21 +3,22 @@
 {% block title %}Connexion{% endblock %}
 
 {% block body %}
+<h1>Connexion</h1>
 <div class ="main-wrapper">
     <form method="post">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
-
         {% if app.user %}
             <div class="mb-3">
                 <h2>Bonjour {{ app.user.username }} !</h2>
                 <p><a href="{{ path('app_logout') }}">Se déconnecter</a></p>
             </div>
         {% else %}
-            <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+            <br>
             <label for="inputUsername">Nom d'utilisateur</label>
             <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus>
+            <br>
             <label for="inputPassword">Mot de passe</label>
             <input type="password" name="password" id="inputPassword" class="form-control" required>
 
@@ -35,15 +36,15 @@
                     </label>
                 </div>
             #}
-
+            <br>
             <button class="btn btn-lg btn-primary" type="S'Inscire">
-                Sign in
+                Connexion
             </button>
             <br></br>
             <br>Pas encore de compte ? <a href="../register">S'inscire.</a></br>
             <br></br>
         {% endif %}
-        <a href="{{ path('article_index') }}"><i class="fas fa-backward"></i>Retour</a>
     </form>
+    <a href="{{ path('article_index') }}"><i class="fas fa-backward"></i>Retour</a>
 </div>
 {% endblock %}

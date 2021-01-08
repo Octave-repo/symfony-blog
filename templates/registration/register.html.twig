@@ -10,15 +10,19 @@
     <h1>Inscription</h1>
     <div class = "main-wrapper">
         {{ form_start(registrationForm) }}
+            <br>
             {{ form_row(registrationForm.username, {
                 label: 'Nom d\'utilisateur'
             }) }}
+            <br>
             {{ form_row(registrationForm.plainPassword.first, {
                 label: 'Mot de passe'
             }) }}
+            <br>
             {{ form_row(registrationForm.plainPassword.second, {
                 label: 'Confirmer mot de passe'
             }) }}
+            <br>
             <button type="submit" class="btn">Register</button>
         {{ form_end(registrationForm) }}
         <br>
